@@ -37,6 +37,19 @@
       </div>
     </section>
 
+    <section class="carousel" v-scroll-reveal>
+      <vueper-slides :parallax="1" autoplay fixed-height="50rem">
+        <vueper-slide
+          v-for="(slide, i) in slides"
+          :key="i"
+          :image="slide.image"
+          :link="slide.link"
+          :title="slide.title"
+          :content="slide.content"
+        ></vueper-slide>
+      </vueper-slides>
+    </section>
+
     <section class="blog" v-scroll-reveal>
       <h1 class="heading-1 blog__title">Blog</h1>
       <p
@@ -51,10 +64,36 @@
 </template>
 
 <script>
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
+
 import myHeader from "@/components/Shared/Header";
 import myFooter from "@/components/Shared/Footer";
+
 export default {
+  data() {
+    return {
+      slides: [
+        {
+          title: "<p class='carousel__title'> Cafe 1 </p>",
+          image:
+            "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2015/02/18/1435/Hyatt-City-of-Dreams-Manila-P004-Cafe.jpg/Hyatt-City-of-Dreams-Manila-P004-Cafe.16x9.adapt.1920.1080.jpg",
+          content: "<p class='carousel__desc'> Cafe Desc </p>",
+          link: "#link-to-article-1"
+        },
+        {
+          title: "<p class='carousel__title'> Cafe 2 </p>",
+          image:
+            "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2016/05/24/1634/Grand-Hyatt-Hong-Kong-P946-Grand-Cafe.jpg/Grand-Hyatt-Hong-Kong-P946-Grand-Cafe.16x9.adapt.1920.1080.jpg",
+          content: "<p class='carousel__desc'> Cafe Desc </p>",
+          link: "#link-to-article-2"
+        },
+      ]
+    };
+  },
   components: {
+    VueperSlides,
+    VueperSlide,
     myHeader,
     myFooter
   }
@@ -67,6 +106,10 @@ export default {
   background-color: rgba(#fff, 0.8);
   position: fixed;
   z-index: 3;
+
+  @media only screen and (max-width: $bp-sm) {
+    position: relative;
+  }
 }
 
 .banner {
@@ -216,3 +259,24 @@ export default {
   }
 }
 </style>
+
+<style lang="scss">
+.vueperslides__arrow{
+  fill: #fff;
+}
+.carousel {
+  &__title {
+    font-size: 3rem;
+    color: $color-primary;
+    width: 50vw;
+    background-image: linear-gradient(to right, rgba(#fff,0), rgba(#fff,1), rgba(#fff,0));
+  }
+  &__desc  {
+    font-size: 2.4rem;
+    color: $color-grey-dark-1;
+    width: 50vw;
+    background-image: linear-gradient(to right, rgba(#fff,0), rgba(#fff,1), rgba(#fff,0));
+  }
+}
+</style>
+
