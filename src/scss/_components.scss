@@ -1,0 +1,84 @@
+.field-input {
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    letter-spacing: 2px;
+    font-size: 1.6rem;
+    border: 1px solid $color-grey-light-1;
+    box-shadow: 0 0 0.5rem 0.1rem rgba($color-grey-dark-1, 0.3);
+    transition: all 0.2s;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0rem 0.5rem 0.3rem rgba($color-primary, 0.3);
+    }
+}
+
+.field-selection {
+    position: relative;
+    width: 25rem;
+    height: 4rem;
+    border-radius: 3rem;
+    overflow: hidden;
+    border: 1px solid $color-grey-light-1;
+    box-shadow: 0 0 0.5rem 0.1rem rgba($color-grey-dark-1, 0.3);
+    transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-lg) {
+        width: 27rem;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+        width: 100%;
+    }
+
+    &--select {
+        font-family: $font-text;
+        font-size: 1.6rem;
+        width: 100%;
+        height: 100%;
+        appearance: none;
+        outline: 0;
+        border: 0;
+        margin: 0;
+        padding-left: 1.6rem;
+        background-color: #fff;
+        color: $color-grey-dark-1;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:focus {
+            color: $color-primary;
+        }
+    }
+
+    &::after {
+        content: "\25BC";
+        position: absolute;
+        top: 1.2rem;
+        right: 2rem;
+        color: $color-grey-dark-1;
+        transition: color 0.2s;
+    }
+
+    &--option {
+        background: $color-primary;
+        color: #fff;
+    }
+
+    &:hover {
+        box-shadow: 0 0rem 0.5rem 0.3rem rgba($color-primary, 0.3);
+
+        &::after {
+            color: $color-primary;
+        }
+    }
+
+    &:focus-within {
+        box-shadow: 0 0rem 0.5rem 0.3rem rgba($color-primary, 0.3);
+
+        &::after {
+            color: #fff;
+        }
+    }
+}

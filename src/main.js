@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
+import VueScrollReveal from 'vue-scroll-reveal';
+
+Vue.use(VueScrollReveal);
 
 Vue.config.productionTip = false
 

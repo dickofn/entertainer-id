@@ -1,0 +1,94 @@
+.base {
+  padding: 5rem 8rem;
+  width: 65%;
+
+  display: flex;
+  justify-content: center;
+
+  @media only screen and (max-width: $bp-md) {
+    width: 100%;
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-md) {
+    background-image: linear-gradient(rgba(#fff, 0.9), rgba(#fff, 0.9)),
+      url("/img/dance-floor.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__img {
+    align-self: center;
+    width: 50%;
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+      display: none;
+    }
+  }
+}
+
+.form{
+  display: block;
+  min-height: 80%;
+  width: 100%;
+  padding-right: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+
+  @media only screen and (max-width: $bp-md) {
+    align-items: center;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    padding-right: 0;
+  }
+
+  &__logo {
+    width: 70%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__field {
+    margin-top:10rem;
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      margin-bottom: 1rem;
+      font-family: $font-title;
+      font-size: 5rem;
+      font-weight: 400;
+      color: $color-primary;
+
+      @media only screen and (max-width: $bp-md) {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .field-input {
+    margin-bottom: 2rem;
+  }
+}
