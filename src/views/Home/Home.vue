@@ -38,7 +38,7 @@
     </section>
 
     <section class="carousel" v-scroll-reveal>
-      <vueper-slides :parallax="1" autoplay fixed-height="50rem">
+      <vueper-slides :parallax="1" autoplay fixed-height>
         <vueper-slide
           v-for="(slide, i) in slides"
           :key="i"
@@ -87,7 +87,7 @@ export default {
             "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2016/05/24/1634/Grand-Hyatt-Hong-Kong-P946-Grand-Cafe.jpg/Grand-Hyatt-Hong-Kong-P946-Grand-Cafe.16x9.adapt.1920.1080.jpg",
           content: "<p class='carousel__desc'> Cafe Desc </p>",
           link: "#link-to-article-2"
-        },
+        }
       ]
     };
   },
@@ -261,21 +261,38 @@ export default {
 </style>
 
 <style lang="scss">
-.vueperslides__arrow{
+.vueperslides__arrow {
   fill: #fff;
+}
+.vueperslides--fixed-height {
+  height: 40rem;
+
+  @media only screen and (max-width: $bp-sm) {
+    height: 45rem;
+  }
 }
 .carousel {
   &__title {
     font-size: 3rem;
     color: $color-primary;
     width: 50vw;
-    background-image: linear-gradient(to right, rgba(#fff,0), rgba(#fff,1), rgba(#fff,0));
+    background-image: linear-gradient(
+      to right,
+      rgba(#fff, 0),
+      rgba(#fff, 1),
+      rgba(#fff, 0)
+    );
   }
-  &__desc  {
+  &__desc {
     font-size: 2.4rem;
     color: $color-grey-dark-1;
     width: 50vw;
-    background-image: linear-gradient(to right, rgba(#fff,0), rgba(#fff,1), rgba(#fff,0));
+    background-image: linear-gradient(
+      to right,
+      rgba(#fff, 0),
+      rgba(#fff, 1),
+      rgba(#fff, 0)
+    );
   }
 }
 </style>
