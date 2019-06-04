@@ -5,21 +5,10 @@
     <section class="profile">
       <div class="profile__cover" :style="coverPic">
         <div class="profile__content">
-          <div class="profile__content__picture--bg">
-            <div class="profile__content__picture--pic" :style="profilePic"></div>
+          <div class="profile__content__picture">
+            <img :src="profilePic" alt="Profile Picture">
           </div>
           <div class="profile__content__name">Walao - Singer</div>
-        </div>
-        <div class="profile__social">
-          <div class="profile__social--item">
-            <img :src="'./img/icon_fb.png'" alt="fb">
-          </div>
-          <div class="profile__social--item">
-            <img :src="'./img/icon_ig.png'" alt="ig">
-          </div>
-          <div class="profile__social--item">
-            <img :src="'./img/icon_tw.png'" alt="tw">
-          </div>
         </div>
       </div>
     </section>
@@ -27,10 +16,7 @@
     <section class="main">
       <div class="main__genre">
         <div class="main__genre-title">
-          <div class="main__genre-title--text">Genre :</div>
-          <div class="main__genre-title--add">
-            <button>&plus;</button>
-          </div>
+          <div class="main__genre-title--text">Genre:</div>
         </div>
         <div class="main__genre-content">
           <div class="main__genre-content--items">
@@ -41,6 +27,20 @@
             >{{ genre }}</div>
           </div>
         </div>
+      </div>
+      <div class="flex-row flex-space-between">
+        <div class="main__social">
+          <div class="main__social--item">
+            <img src="@/assets/icon_fb.png" alt="fb">
+          </div>
+          <div class="main__social--item">
+            <img src="@/assets/icon_ig.png" alt="ig">
+          </div>
+          <div class="main__social--item">
+            <img src="@/assets/icon_tw.png" alt="tw">
+          </div>
+        </div>
+        <button class="btn main__book">Book Talent</button>
       </div>
       <div class="main__schedule">
         <div class="main__schedule-title">
@@ -107,17 +107,8 @@ export default {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat"
       },
-      profilePic: {
-        background: "url(" + require("@/assets/p_ph.jpg") + ")",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat"
-      },
-      genres: [
-        "jazz",
-        "pop",
-        "edm",
-        "classic",
-      ],
+      profilePic: require("@/assets/p_ph.jpg"),
+      genres: ["jazz", "pop", "edm", "classic"],
       currentTab: "Bio"
     };
   },
@@ -163,22 +154,13 @@ export default {
     }
 
     &__picture {
-      &--bg {
-        width: 15rem;
-        height: 15rem;
-        border-radius: 3rem;
-        position: relative;
-        background-color: $color-primary;
-      }
+      margin-bottom: 2rem;
 
-      &--pic {
-        top: 0.5rem;
-        left: 0.5rem;
-        right: 0.5rem;
-        bottom: 0.5rem;
-        position: absolute;
-        border-radius: 2.5rem;
-        z-index: 1;
+      img {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 100%;
+        object-fit: cover;
       }
     }
 
@@ -188,50 +170,14 @@ export default {
       text-align: center;
       font-family: $font-title;
       font-size: 2rem;
-      color: $color-primary;
-      background-color: rgba(#fff, 0.5);
+      color: $color-secondary;
+      background-image: linear-gradient(
+        to right,
+        rgba(#fff, 0.05),
+        rgba(#fff, 0.9),
+        rgba(#fff, 0.05)
+      );
       width: 100%;
-    }
-  }
-
-  &__social {
-    position: absolute;
-    top: 3rem;
-    left: 3rem;
-    padding: 0.5rem 2rem;
-    color: $color-primary;
-    border-radius: 1rem;
-    align-self: flex-start;
-    display: flex;
-
-    @media only screen and (max-width: $bp-sm) {
-      position: relative;
-      top: auto;
-      left: auto;
-      padding-bottom: 1rem;
-      align-self: auto;
-    }
-
-    &--item {
-      cursor: pointer;
-      line-height: 0;
-      width: 5rem;
-      background-color: rgba(#fff, 0.5);
-      border-radius: 1.5rem;
-      padding: 0.5rem;
-      transition: all 0.2s;
-
-      img {
-        width: 100%;
-      }
-
-      &:hover {
-        padding: 0;
-      }
-
-      &:not(:last-child) {
-        margin-right: 2rem;
-      }
     }
   }
 }
@@ -240,39 +186,19 @@ export default {
   padding: 5rem 10vw;
 
   &__genre {
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: $color-primary;
+    color: $color-grey-dark-1;
+    padding: 0 1rem;
+    border: 1px solid $color-grey-light-1;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
 
-    &-title {
-      margin-bottom: 2rem;
-
-      display: flex;
-      justify-content: space-between;
-
-      &--add {
-        button {
-          cursor: pointer;
-          background-color: $color-grey-light-1;
-          font-size: 2rem;
-          color: $color-primary;
-          width: 3rem;
-          border-radius: 100%;
-
-          &:focus {
-            outline: none;
-          }
-        }
-      }
-    }
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
     &-content {
-      padding: 0.5rem 1rem;
-      border: 1px solid $color-grey-light-1;
-      border-radius: 1rem;
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-
       &--items {
         display: flex;
         flex-wrap: wrap;
@@ -280,11 +206,40 @@ export default {
 
       &--item {
         padding: 0.5rem 1rem;
-        color: $color-primary;
+        min-width: 7rem;
+        text-align: center;
+        color: $color-secondary;
         background-color: $color-grey-light-1;
         border-radius: 1rem;
         margin: 0.5rem 0;
         margin-left: 2rem;
+      }
+    }
+  }
+
+  &__social {
+    color: $color-primary;
+    align-self: flex-start;
+    display: flex;
+    margin-bottom: 2rem;
+
+    &--item {
+      cursor: pointer;
+      width: 5rem;
+      padding: 0.5rem;
+      transition: all 0.2s;
+
+      img {
+        width: 100%;
+        border-radius: 100%;
+      }
+
+      &:hover {
+        padding: 0;
+      }
+
+      &:not(:last-child) {
+        margin-right: 2rem;
       }
     }
   }
