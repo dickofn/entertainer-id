@@ -1,67 +1,64 @@
+.base,
+.blur-effect {
+  background: url("~@/assets/form-background-effect.webp"), $color-accent;
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  background-attachment: fixed; 
+
+  @media only screen and (max-width: $bp-sm) {
+    background-position: center;
+  }
+}
+
 .base {
-  padding: 5rem 8rem;
-  width: 65%;
+  min-height: 100vh;
 
   display: flex;
   justify-content: center;
-
-  @media only screen and (max-width: $bp-md) {
-    width: 100%;
-  }
 }
 
 .card {
+  position: relative;
+  margin: 10rem 0;
+  width: 50rem;
+
   display: flex;
   align-items: center;
 
-  @media only screen and (max-width: $bp-md) {
-    background-image: linear-gradient(rgba(#fff, 0.9), rgba(#fff, 0.9)),
-      url("/img/dance-floor.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &__img {
-    align-self: center;
-    width: 50%;
-    
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
-
-    img {
-      width: 100%;
-    }
-
-    @media only screen and (max-width: $bp-md) {
-      display: none;
-    }
+  @media only screen and (max-width: $bp-sm) {
+    margin: 0;
+    width: 100%;
+    align-items: flex-start;
   }
 }
 
-.form{
-  display: block;
-  min-height: 80%;
+.blur-effect {
+  z-index: 1;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(10px);
+}
+
+.form {
+  z-index: 2;
+  background: rgba(#fff, 0.8);
+  padding: 3rem;
+  border-radius: 3rem;
   width: 100%;
-  padding-right: 2rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-
-  @media only screen and (max-width: $bp-md) {
-    align-items: center;
-  }
+  height: 100%;
 
   @media only screen and (max-width: $bp-sm) {
-    padding-right: 0;
+    background: rgba(#fff, 0.5);
+    border-radius: 0rem;
   }
 
   &__logo {
-    width: 70%;
+    width: 100%;
+    margin-bottom: 4rem;
 
     img {
       width: 100%;
@@ -69,8 +66,7 @@
   }
 
   &__field {
-    margin-top:10rem;
-    width: 70%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -78,17 +74,14 @@
     &-title {
       margin-bottom: 1rem;
       font-family: $font-title;
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: 400;
       color: $color-primary;
-
-      @media only screen and (max-width: $bp-md) {
-        font-size: 4rem;
-      }
     }
   }
 
   .field-input {
+    font-size: 1.4rem;
     margin-bottom: 2rem;
   }
 }

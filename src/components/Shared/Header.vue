@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  height: 9rem;
+  height: 7rem;
   background-color: $color-grey-light-1;
   padding: 0 2rem;
   width: 100%;

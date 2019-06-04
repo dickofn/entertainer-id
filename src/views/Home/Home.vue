@@ -9,14 +9,16 @@
     <section class="introduction" v-scroll-reveal>
       <div class="who">
         <div class="introduction__container">
-          <div class="introduction__image"></div>
+          <div class="introduction__image">
+            <img src="@/assets/landing-1.png" alt="dance">
+          </div>
           <div class="introduction__content">
-            <div class="introduction__content-header">
+            <div class="introduction__content-header header-1">
               <div class="introduction__content-header--title">Who We Are</div>
-              <div class="introduction__content-header--addon"></div>
+              <div class="introduction__content-header--addon flex-fill-line"></div>
             </div>
             <div
-              class="introduction__content-body"
+              class="introduction__content-body header-2"
             >" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, labore. Temporibus, repellendus, perspiciatis eveniet fugiat quod et quae autem maiores, sit expedita doloribus corporis quas cum nesciunt sed deleniti impedit? "</div>
           </div>
         </div>
@@ -24,15 +26,17 @@
       <div class="what">
         <div class="introduction__container">
           <div class="introduction__content">
-            <div class="introduction__content-header">
-              <div class="introduction__content-header--addon"></div>
+            <div class="introduction__content-header header-1">
+              <div class="introduction__content-header--addon flex-fill-line"></div>
               <div class="introduction__content-header--title">What We Do</div>
             </div>
             <div
-              class="introduction__content-body"
+              class="introduction__content-body header-2"
             >" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, labore. Temporibus, repellendus, perspiciatis eveniet fugiat quod et quae autem maiores, sit expedita doloribus corporis quas cum nesciunt sed deleniti impedit? "</div>
           </div>
-          <div class="introduction__image"></div>
+          <div class="introduction__image">
+            <img src="@/assets/landing-2.png" alt="note">
+          </div>
         </div>
       </div>
     </section>
@@ -51,10 +55,15 @@
     </section>
 
     <section class="blog" v-scroll-reveal>
-      <h1 class="heading-1 blog__title">Blog</h1>
-      <p
-        class="paragraph blog__text"
-      >While this website still on progress, please kindly check our blog with the button bellow, thanks</p>
+      <div class="blog__content">
+        <div class="blog__content-header header-1">
+          <div class="blog__content-header--title">Blog</div>
+          <div class="blog__content-header--addon flex-fill-line"></div>
+        </div>
+        <div
+          class="blog__content-body header-2"
+        >While this website still on progress, please kindly check our blog with the button bellow, thanks</div>
+      </div>
 
       <a href="http://blog.entertainer.id" class="blog__btn">Blog</a>
     </section>
@@ -118,11 +127,7 @@ export default {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: top;
-  background-size: cover;
-
-  @media only screen and (max-width: $bp-xl) {
-    background-size: contain;
-  }
+  background-size: 100vw auto;
 
   img {
     width: 100%;
@@ -146,7 +151,7 @@ export default {
     justify-content: center;
     align-items: center;
 
-    @media only screen and (max-width: $bp-md) {
+    @media only screen and (max-width: $bp-sm) {
       flex-direction: column;
     }
 
@@ -154,10 +159,19 @@ export default {
       &__image {
         padding: 0 1rem;
         width: 45%;
-        height: 25rem;
         background-color: #fff;
+        min-height: 40rem;
 
-        @media only screen and (max-width: $bp-md) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (max-width: $bp-sm) {
+          min-height: 0;
+          width: 100%;
+        }
+
+        img {
           width: 100%;
         }
       }
@@ -166,7 +180,7 @@ export default {
         width: 55%;
         padding: 5rem;
 
-        @media only screen and (max-width: $bp-md) {
+        @media only screen and (max-width: $bp-sm) {
           width: 100%;
         }
 
@@ -174,22 +188,8 @@ export default {
           display: flex;
 
           &--title {
-            font-size: 2.4rem;
-            font-weight: 700;
             color: $color-primary;
           }
-          &--addon {
-            flex: 1;
-            align-self: flex-end;
-            height: 0.5rem;
-            background-color: $color-secondary;
-            border-radius: 1rem;
-          }
-        }
-
-        &-body {
-          font-size: 1.4rem;
-          font-weight: 600;
         }
       }
     }
@@ -199,21 +199,21 @@ export default {
     .introduction__image {
       border-right: 1px solid $color-grey-light-2;
 
-      @media only screen and (max-width: $bp-md) {
+      @media only screen and (max-width: $bp-sm) {
         border: none;
       }
     }
   }
   .what {
     .introduction__container {
-      @media only screen and (max-width: $bp-md) {
+      @media only screen and (max-width: $bp-sm) {
         flex-direction: column-reverse;
       }
     }
     .introduction__image {
       border-left: 1px solid $color-grey-light-2;
 
-      @media only screen and (max-width: $bp-md) {
+      @media only screen and (max-width: $bp-sm) {
         border: none;
       }
     }
@@ -221,13 +221,31 @@ export default {
 }
 
 .blog {
-  margin: 0 auto;
-  padding: 5rem 0;
-  width: 70%;
-
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  padding: 10rem 20rem;
+
+  @media only screen and (max-width: $bp-md) {
+    padding: 10rem 0rem;
+  }
+
+  .blog {
+    &__content {
+      &-header {
+        display: flex;
+
+        &--title {
+          color: $color-primary;
+        }
+      }
+      &-body {
+        text-align: center;
+      }
+    }
+  }
 
   &__btn {
     margin-top: 3rem;
@@ -252,10 +270,6 @@ export default {
     &:active {
       transform: scale(0.9);
     }
-  }
-
-  &__text {
-    text-align: center;
   }
 }
 </style>
