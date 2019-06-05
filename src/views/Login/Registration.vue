@@ -61,7 +61,7 @@
             class="field-input form__field-input--pass"
           >
           <div class="form__field-btns">
-            <button class="form__field-btn form__field-btn--register">Register</button>
+            <button class="btn btn form__field-btn form__field-btn--register">Register</button>
             <router-link :to="{name : 'login'}" class="form__field-login">Already have account?</router-link>
           </div>
         </div>
@@ -134,34 +134,9 @@ export default {
   }
 
   &__field-btn {
-    font-family: $font-text;
-    text-align: center;
     height: 4rem;
     width: 16rem;
-    padding: 0.5rem 0 0.5rem 0;
     margin-bottom: 1rem;
-    border: 1px solid $color-grey-light-1;
-    border-radius: 2rem;
-    cursor: pointer;
-    background-color: #fff;
-    box-shadow: 0 0 0.5rem 0.1rem rgba($color-grey-dark-1, 0.3);
-    transition: all 0.2s;
-
-    &:hover {
-      box-shadow: 0 0rem 0.5rem 0.3rem rgba($color-primary, 0.3);
-    }
-
-    &:active {
-      border: 1px solid $color-primary;
-      background-color: $color-primary;
-      color: #fff;
-      box-shadow: 0 0 0.5rem 0.1rem rgba($color-grey-dark-1, 0.3);
-    }
-
-    &:focus {
-      outline: none;
-      box-shadow: 0 0rem 0.5rem 0.3rem rgba($color-primary, 0.3);
-    }
   }
 
   &__field-login {

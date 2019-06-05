@@ -37,12 +37,16 @@
               >
               <label for="remember" class="form__field-option-checkbox--label">Remember me</label>
             </div>
-            <router-link to="#" tag="button" class="form__field-btn form__field-option--forget">Forgot Password?</router-link>
+            <router-link
+              to="#"
+              tag="button"
+              class="btn form__field-btn form__field-option--forget"
+            >Forgot Password?</router-link>
           </div>
           <div class="form__field-btns">
-            <button class="form__field-btn form__field-btn--login">Login</button>
+            <button class="btn form__field-btn form__field-btn--login">Login</button>
             <router-link :to="{name: 'register'}">
-              <button class="form__field-btn form__field-btn--register">Register</button>
+              <button class="btn form__field-btn form__field-btn--register">Register</button>
             </router-link>
           </div>
         </div>
@@ -87,7 +91,15 @@ export default {
     display: flex;
     justify-content: space-between;
 
+    @media only screen and (max-width: $bp-sm) {
+      flex-direction: column;
+    }
+
     &-checkbox {
+      @media only screen and (max-width: $bp-sm) {
+        margin-bottom: 1rem;
+      }
+
       &--box {
         position: absolute;
         top: 0.5rem;
@@ -128,6 +140,10 @@ export default {
     &--forget {
       margin-bottom: 2rem;
       width: 18rem !important;
+
+      @media only screen and (max-width: $bp-sm) {
+        align-self: flex-end;
+      }
     }
   }
 
@@ -148,33 +164,6 @@ export default {
   }
 
   &__field-btn {
-    font-family: $font-text;
-    text-align: center;
-    width: 8rem;
-    padding: 0.5rem 0 0.5rem 0;
-    border: 1px solid $color-grey-light-1;
-    border-radius: 2rem;
-    cursor: pointer;
-    background-color: #fff;
-    box-shadow: 0 0 0.5rem 0.1rem rgba($color-grey-dark-1, 0.3);
-    transition: all 0.2s;
-
-    &:hover {
-      box-shadow: 0 0rem 0.5rem 0.3rem rgba($color-primary, 0.3);
-    }
-
-    &:active {
-      border: 1px solid $color-primary;
-      background-color: $color-primary;
-      color: #fff;
-      box-shadow: 0 0 0.5rem 0.1rem rgba($color-grey-dark-1, 0.3);
-    }
-
-    &:focus {
-      outline: none;
-      box-shadow: 0 0rem 0.5rem 0.3rem rgba($color-primary, 0.3);
-    }
-
     &--login {
       margin-bottom: 2rem;
 
