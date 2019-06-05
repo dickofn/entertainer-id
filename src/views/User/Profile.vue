@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="flex-row flex-space-between">
+      <div class="flex-row flex-justify-space-between flex-align-center social-book__container">
         <div class="main__social">
           <div class="main__social--item">
             <img src="@/assets/icon_fb.png" alt="fb">
@@ -42,12 +42,24 @@
         </div>
         <button class="btn main__book">Book Talent</button>
       </div>
-      <div class="main__schedule">
-        <div class="main__schedule-title">
-          <div class="main__schedule-title--text">Upcoming Show :</div>
+      <div
+        class="flex-row flex-justify-space-between flex-align-center schedule-partner__container"
+      >
+        <div class="schedule-partner">
+          <div class="schedule-partner-title">
+            <div class="schedule-partner-title--text">Upcoming Show :</div>
+          </div>
+          <div class="schedule-partner-content">
+            <div class="schedule-partner-content--calendar"></div>
+          </div>
         </div>
-        <div class="main__schedule-content">
-          <div class="main__schedule-content--calendar"></div>
+        <div class="schedule-partner">
+          <div class="schedule-partner-title">
+            <div class="schedule-partner-title--text">Partner :</div>
+          </div>
+          <div class="schedule-partner-content">
+            <div class="schedule-partner-content--calendar"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -217,53 +229,79 @@ export default {
     }
   }
 
-  &__social {
-    color: $color-primary;
-    align-self: flex-start;
-    display: flex;
-    margin-bottom: 2rem;
+  .social-book__container {
+    @media only screen and (max-width: $bp-sm) {
+      flex-direction: column;
+    }
 
-    &--item {
-      cursor: pointer;
-      width: 5rem;
-      padding: 0.5rem;
-      transition: all 0.2s;
+    .main {
+      &__social {
+        color: $color-primary;
+        display: flex;
+        margin-bottom: 2rem;
 
-      img {
-        width: 100%;
-        border-radius: 100%;
+        &--item {
+          cursor: pointer;
+          width: 5rem;
+          padding: 0.5rem;
+          transition: all 0.2s;
+
+          img {
+            width: 100%;
+            border-radius: 100%;
+          }
+
+          &:hover {
+            padding: 0;
+          }
+
+          &:not(:last-child) {
+            margin-right: 2rem;
+          }
+        }
       }
 
-      &:hover {
-        padding: 0;
-      }
-
-      &:not(:last-child) {
-        margin-right: 2rem;
+      &__book {
+        padding: 0.5rem 3rem;
+        width: auto;
+        height: fit-content;
       }
     }
   }
 
-  &__schedule {
-    &-title {
-      margin-bottom: 2rem;
-
-      &--text {
-        font-size: 2rem;
-        font-weight: 700;
-        color: $color-primary;
+  .schedule-partner__container {
+    @media only screen and (max-width: $bp-sm) {
+      & > :not(:last-child) {
+        margin-bottom: 2rem;
       }
     }
 
-    &-content {
+    .schedule-partner {
       padding: 2rem 3rem;
       border: 1px solid $color-grey-light-1;
       border-radius: 1rem;
+      width: 48%;
 
-      &--calendar {
-        border-radius: 1rem;
-        background-color: $color-primary;
-        height: 50rem; // TODO: fixed height, content coming soon
+      @media only screen and (max-width: $bp-sm) {
+        width: 100%;
+      }
+
+      &-title {
+        margin-bottom: 2rem;
+
+        &--text {
+          font-size: 2rem;
+          font-weight: 700;
+          color: $color-primary;
+        }
+      }
+
+      &-content {
+        &--calendar {
+          border-radius: 1rem;
+          background-color: $color-grey-dark-1;
+          height: 50rem; // TODO: fixed height, content coming soon
+        }
       }
     }
   }
