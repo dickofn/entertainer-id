@@ -1,6 +1,10 @@
 .flex-row {
   display: flex;
+  flex-wrap: wrap;
 }
-.flex-space-between {
+.flex-justify-space-between {
   justify-content: space-between;
+}
+.flex-align-center {
+  align-items: center;
 }
