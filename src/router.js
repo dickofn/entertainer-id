@@ -26,6 +26,11 @@ export default new Router({
       path: "/profile",
       name: "profile",
       component: () => import("./views/User/Profile.vue")
-    }
+    },
+    {
+      path: "/catalog",
+      name: "catalog",
+      component: () => import("./views/Catalog/Catalog.vue")
+    },
   ]
 });
