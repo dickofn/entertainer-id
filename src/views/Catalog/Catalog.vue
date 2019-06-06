@@ -96,6 +96,7 @@
         v-for="talent in talents"
         :key="talent.id"
         :thumbnail="talent.thumbnail"
+        :rating="talent.rating"
         :name="talent.name"
         :talent="talent.talent"
         :id="talent.id"
@@ -143,48 +144,56 @@ export default {
         {
           thumbnail: require("@/assets/singer-1.jpg"),
           id: "1",
+          rating: "5",
           name: "Talent1",
           talent: "Singer"
         },
         {
           thumbnail: require("@/assets/singer-1.jpg"),
           id: "2",
+          rating: "4",
           name: "Talent2",
           talent: "Musician"
         },
         {
           thumbnail: require("@/assets/singer-1.jpg"),
           id: "3",
+          rating: "5",
           name: "Talent3",
           talent: "Dancer"
         },
         {
           thumbnail: require("@/assets/singer-1.jpg"),
           id: "4",
+          rating: "3",
           name: "Talent4",
           talent: "MC"
         },
         {
           thumbnail: require("@/assets/singer-1.jpg"),
           id: "5",
+          rating: "4",
           name: "Talent5",
           talent: "DJ"
         },
         {
           thumbnail: require("@/assets/singer-1.jpg"),
           id: "6",
+          rating: "2",
           name: "Talent6",
           talent: "Band"
         },
         {
           thumbnail: require("@/assets/singer-1.jpg"),
           id: "7",
+          rating: "5",
           name: "Talent7",
           talent: "Musician"
         },
         {
           thumbnail: require("@/assets/singer-1.jpg"),
           id: "8",
+          rating: "0",
           name: "Talent8",
           talent: "Singer"
         }

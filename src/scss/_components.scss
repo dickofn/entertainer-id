@@ -9,7 +9,7 @@
 .btn {
   font-family: $font-text;
   text-align: center;
-  width: 8rem;
+  min-width: 8rem;
   padding: 0.5rem 0 0.5rem 0;
   border: 1px solid $color-grey-light-1;
   border-radius: 2rem;
