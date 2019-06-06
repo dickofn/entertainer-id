@@ -47,11 +47,19 @@ export default {
     display: flex;
     align-items: center;
 
+    @media only screen and (max-width: $bp-sm) {
+      flex-direction: column;
+    }
+
     &-picture {
       img {
         max-height: 20rem;
         margin-right: 3rem;
         border-radius: 1rem;
+
+        @media only screen and (max-width: $bp-sm) {
+          margin-right: 0;
+        }
       }
     }
 

@@ -57,12 +57,15 @@ export default {
     align-items: center;
 
     @media only screen and (max-width: $bp-sm) {
+      flex-direction: column;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
       align-items: flex-start;
     }
 
     &-picture {
       img {
-        border: 3px solid $color-primary;
         border-radius: 100%;
         height: 15rem;
         width: 15rem;

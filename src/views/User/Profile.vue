@@ -197,6 +197,10 @@ export default {
 .main {
   padding: 5rem 10vw;
 
+  @media only screen and (max-width: $bp-sm) {
+    padding: 5rem 2vw;
+  }
+
   &__genre {
     font-size: 1.4rem;
     font-weight: 700;
@@ -230,21 +234,27 @@ export default {
   }
 
   .social-book__container {
+    margin-bottom: 2rem;
+
     @media only screen and (max-width: $bp-sm) {
       flex-direction: column;
     }
 
     .main {
       &__social {
-        color: $color-primary;
         display: flex;
-        margin-bottom: 2rem;
+        align-items: center;
+
+        @media only screen and (max-width: $bp-sm) {
+          margin-bottom: 2rem;
+        }
 
         &--item {
           cursor: pointer;
           width: 5rem;
           padding: 0.5rem;
           transition: all 0.2s;
+          line-height: 0;
 
           img {
             width: 100%;
@@ -253,6 +263,10 @@ export default {
 
           &:hover {
             padding: 0;
+          }
+
+          &:active {
+            padding: 0.5rem;
           }
 
           &:not(:last-child) {
@@ -265,6 +279,15 @@ export default {
         padding: 0.5rem 3rem;
         width: auto;
         height: fit-content;
+        color: #fff;
+
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+
+        &:active {
+          background-color: $color-primary;
+          border-color: $color-primary;
+        }
       }
     }
   }
@@ -292,7 +315,7 @@ export default {
         &--text {
           font-size: 2rem;
           font-weight: 700;
-          color: $color-primary;
+          color: $color-secondary;
         }
       }
 
@@ -311,6 +334,10 @@ export default {
   background-color: $color-grey-light-1;
   padding: 4rem 10vw;
 
+  @media only screen and (max-width: $bp-sm) {
+      padding: 4rem 2vw;
+    }
+
   &__menu {
     margin-bottom: 4rem;
 
@@ -318,14 +345,14 @@ export default {
     justify-content: space-between;
 
     &-item {
-      background-color: $color-grey-light-2;
+      border-right: 1px solid $color-grey-light-2;
+      border-left: 1px solid $color-grey-light-2;
       text-align: center;
       font-family: $font-title;
-      color: $color-primary;
+      color: $color-secondary;
       font-size: 2rem;
       width: 25rem;
       padding: 0.5rem 0;
-      border-radius: 1rem;
       transition: all 0.2s;
 
       &:not(:last-child) {
@@ -337,18 +364,18 @@ export default {
       }
 
       &:hover {
-        background-color: $color-primary;
-        color: #fff;
+        color: $color-primary;
         cursor: pointer;
       }
 
       &:active {
-        background-color: $color-primary-dark;
+        color: $color-primary-dark;
       }
 
       &--active {
-        background-color: $color-primary;
-        color: #fff;
+        border-right: 1px solid $color-secondary;
+        border-left: 1px solid $color-secondary;
+        color: $color-primary;
       }
     }
   }
