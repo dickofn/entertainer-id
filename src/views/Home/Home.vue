@@ -168,7 +168,7 @@ export default {
 
         @media only screen and (max-width: $bp-sm) {
           min-height: 0;
-          width: 100%;
+          width: 50%;
         }
 
         img {
@@ -229,7 +229,7 @@ export default {
   padding: 10rem 20rem;
 
   @media only screen and (max-width: $bp-md) {
-    padding: 10rem 0rem;
+    padding: 10rem 5rem;
   }
 
   .blog {

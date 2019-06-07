@@ -239,6 +239,7 @@ $tooltipColor: $color-primary;
 
 .filter {
   margin: 3rem 10vw;
+  margin-bottom: 5rem;
   font-family: $font-title;
   border-right: 1px solid $color-grey-light-2;
   border-left: 1px solid $color-grey-light-2;
