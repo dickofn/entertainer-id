@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <!-- Changing key means all the item in vue router will be reloaded -->
+    <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+};
 </script>
 
-<style lang="scss"> 
+<style lang="scss">
 // This empty all selector allowing scss in another page to be scoped
-* { 
+* {
 }
 </style>
 
