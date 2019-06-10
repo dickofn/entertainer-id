@@ -1,7 +1,11 @@
 <template>
   <div class="card">
     <div class="card__header">
-      <img :src="thumbnail" :alt="'picture of' + name" class="card__header-img">
+      <img
+        :src="thumbnail"
+        :alt="'picture of' + name"
+        :class="{'card__header-img' : true , 'card__header-img--small' : type=='small'}"
+      >
       <div class="card__header-stars">
         <span
           class="card__header-star card__header-star--filled"
@@ -53,9 +57,9 @@
 
 <script>
 export default {
-  props: ["thumbnail", "name", "rating", "talent", "id"],
+  props: ["thumbnail", "name", "rating", "talent", "id", "type"],
   methods: {
-    seeProfile(id) {
+    seeProfile (id) {
       this.id = id;
       this.$router.push({ name: "profile" });
     }
@@ -86,6 +90,11 @@ export default {
       height: 20rem;
       object-fit: cover;
       margin-bottom: 2rem;
+
+      &--small {
+        width: 10rem;
+        height: 10rem;
+      }
     }
 
     &-star {

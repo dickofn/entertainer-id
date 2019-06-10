@@ -100,6 +100,7 @@
         :name="talent.name"
         :talent="talent.talent"
         :id="talent.id"
+        :type="'big'"
       ></card>
     </section>
 
@@ -116,7 +117,7 @@ import VueSlider from "vue-slider-component";
 import "vue-slider-component/theme/default.css";
 
 export default {
-  data() {
+  data () {
     return {
       categoryList: [
         "Singer",
@@ -364,7 +365,6 @@ $tooltipColor: $color-primary;
   }
 
   &__card {
-    background-color: #fff;
     width: 25%;
 
     @media only screen and (max-width: $bp-lg) {
