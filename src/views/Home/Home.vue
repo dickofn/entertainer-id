@@ -2,9 +2,9 @@
   <div>
     <my-header></my-header>
 
-    <section class="banner" v-scroll-reveal>
+    <!-- <section class="banner" v-scroll-reveal>
       <img src="@/assets/banner.webp" alt="banner">
-    </section>
+    </section> -->
 
     <section class="introduction" v-scroll-reveal>
       <div class="who">
@@ -54,7 +54,7 @@
       </vueper-slides>
     </section>
 
-    <section class="blog" v-scroll-reveal>
+    <!-- <section class="blog" v-scroll-reveal>
       <div class="blog__content">
         <div class="blog__content-header header-1">
           <div class="blog__content-header--title">Blog</div>
@@ -66,7 +66,7 @@
       </div>
 
       <a href="http://blog.entertainer.id" class="blog__btn">Blog</a>
-    </section>
+    </section> -->
 
     <my-footer></my-footer>
   </div>
