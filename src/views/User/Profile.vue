@@ -365,7 +365,7 @@ export default {
   }
 
   .schedule-partner__container {
-    @media only screen and (max-width: $bp-sm) {
+    @media only screen and (max-width: $bp-lg) {
       & > :not(:last-child) {
         margin-bottom: 2rem;
       }
@@ -377,7 +377,7 @@ export default {
       border-radius: 1rem;
       width: 48%;
 
-      @media only screen and (max-width: $bp-sm) {
+      @media only screen and (max-width: $bp-lg) {
         width: 100%;
       }
 
@@ -407,14 +407,14 @@ export default {
           overflow-y: scroll;
 
           .partner-card {
-            width: 25%;
+            flex-basis: 24%;
 
             @media only screen and (max-width: $bp-lg) {
-              width: 33%;
+              flex-basis: 32%;
             }
 
             @media only screen and (max-width: $bp-sm) {
-              width: 50%;
+              flex-basis: 49%
             }
           }
         }

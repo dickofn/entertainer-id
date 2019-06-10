@@ -75,9 +75,18 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  flex: 0 0 23%;
+
+  @media only screen and (max-width: $bp-lg) {
+    flex-basis: 30%;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    flex-basis: 47%;
+  }
 
   &__header {
-    width: 90%;
+    width: 100%;
     margin-bottom: 1rem;
 
     display: flex;
@@ -90,6 +99,11 @@ export default {
       height: 20rem;
       object-fit: cover;
       margin-bottom: 2rem;
+
+      @media only screen and (max-width: $bp-sm) {
+        width: 15rem;
+        height: 15rem;
+      }
 
       &--small {
         width: 10rem;
@@ -104,7 +118,7 @@ export default {
   }
 
   &__body {
-    width: 90%;
+    width: 100%;
     border-right: 1px solid $color-grey-light-2;
     border-left: 1px solid $color-grey-light-2;
 
@@ -160,9 +174,14 @@ export default {
       &--button {
         padding: 1rem 2rem;
         font-family: $font-title;
+        font-size: 1.2rem;
         background-color: $color-secondary;
         color: #fff;
         border: none;
+
+        @media only screen and (max-width: $bp-xl) {
+          padding: 1rem;
+        }
 
         &:active {
           background-color: $color-primary;

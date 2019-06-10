@@ -93,7 +93,7 @@
     <section class="catalog">
       <div v-if="!!search || search != ''" class="catalog__header">
         Showing search result of
-        <b>&nbsp;{{ search }}&nbsp;</b> ...
+        <b>&nbsp;{{ search }}&nbsp;</b>:
       </div>
       <card
         class="catalog__card"
@@ -255,6 +255,8 @@ $tooltipColor: $color-primary;
 
   @media only screen and (max-width: $bp-sm) {
     flex-direction: column;
+    margin: 3rem 5vw;
+    margin-bottom: 5rem;
   }
 
   &__header {
@@ -365,28 +367,14 @@ $tooltipColor: $color-primary;
   justify-content: space-between;
 
   @media only screen and (max-width: $bp-sm) {
-    margin: 0 2vw;
+    margin: 0 5vw;
   }
 
   &__header {
     width: 100%;
     margin-bottom: 5rem;
     font-size: 2.4rem;
-
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  &__card {
-    width: 25%;
-
-    @media only screen and (max-width: $bp-lg) {
-      width: 33%;
-    }
-
-    @media only screen and (max-width: $bp-sm) {
-      width: 50%;
-    }
+    text-align: right;
   }
 }
 </style>
