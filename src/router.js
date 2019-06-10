@@ -3,7 +3,7 @@ import Router from "vue-router";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
@@ -31,6 +31,13 @@ export default new Router({
       path: "/catalog",
       name: "catalog",
       component: () => import("./views/Catalog/Catalog.vue")
-    },
-  ]
+    }
+  ],
+
+  // eslint-disable-next-line
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 };
+  }
 });
+
+export default router;
