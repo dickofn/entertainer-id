@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       videos: [
         {
@@ -39,10 +39,11 @@ export default {
 
 <style lang="scss" scoped>
 .video {
+  border-right: 1px solid $color-grey-light-2;
+  border-left: 1px solid $color-grey-light-2;
+
   &__card {
     padding: 3rem;
-    border-radius: 1rem;
-    background-color: $color-grey-light-2;
 
     display: flex;
     align-items: center;

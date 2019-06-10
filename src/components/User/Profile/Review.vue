@@ -50,6 +50,9 @@ export default {
 
 <style lang="scss" scoped>
 .review {
+  border-right: 1px solid $color-grey-light-2;
+  border-left: 1px solid $color-grey-light-2;
+
   &__card {
     padding: 3rem;
 

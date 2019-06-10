@@ -424,7 +424,6 @@ export default {
 }
 
 .tabbed {
-  background-color: $color-grey-light-1;
   padding: 4rem 10vw;
 
   @media only screen and (max-width: $bp-sm) {
