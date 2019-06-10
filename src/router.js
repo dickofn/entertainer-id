@@ -30,6 +30,7 @@ const router = new Router({
     {
       path: "/catalog",
       name: "catalog",
+      props: (route) => ({ search: route.query.search }),
       component: () => import("./views/Catalog/Catalog.vue")
     }
   ],

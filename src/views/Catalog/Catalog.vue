@@ -91,6 +91,10 @@
     </section>
 
     <section class="catalog">
+      <div v-if="!!search || search != ''" class="catalog__header">
+        Showing search result of
+        <b>&nbsp;{{ search }}&nbsp;</b> ...
+      </div>
       <card
         class="catalog__card"
         v-for="talent in talents"
@@ -103,7 +107,6 @@
         :type="'big'"
       ></card>
     </section>
-
     <myFooter></myFooter>
   </div>
 </template>
@@ -117,6 +120,7 @@ import VueSlider from "vue-slider-component";
 import "vue-slider-component/theme/default.css";
 
 export default {
+  props: ['search'],
   data () {
     return {
       categoryList: [
@@ -362,6 +366,15 @@ $tooltipColor: $color-primary;
 
   @media only screen and (max-width: $bp-sm) {
     margin: 0 2vw;
+  }
+
+  &__header {
+    width: 100%;
+    margin-bottom: 5rem;
+    font-size: 2.4rem;
+
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__card {

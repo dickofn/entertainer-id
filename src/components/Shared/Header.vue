@@ -12,9 +12,10 @@
           type="text"
           name="search"
           id="search"
-          v-model="search"
-          placeholder="search"
+          v-model="keyword"
+          placeholder="Search here, see our available talents"
           class="field-input header__search-bar__field-input"
+          @keypress.enter="search"
         >
       </div>
 
@@ -34,8 +35,13 @@
 export default {
   data () {
     return {
-      search: ""
+      keyword: ""
     };
+  },
+  methods: {
+    search () {
+      this.$router.push({ path: 'catalog', query: { search: this.keyword } })
+    }
   }
 };
 </script>
